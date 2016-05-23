@@ -2,14 +2,15 @@ require 'rails_helper'
 
 describe Movie do
   it "is valid with a title, released date, description, total gross, image filename and rating" do
-    movie = Movie.new(
-      title: 'Iron Man',
-      description: 'When wealthy industrialist Tony Sdtart is forced to build',
-      image_file_name: 'ironman.jpg',
-      released_on: '2008-05-02',
-      rating: 'PG-13',
-      total_gross: 318_412_101
-    )
+    movie = FactoryGirl.build(:movie)
+    # movie = Movie.new(
+    #   title: 'Iron Man',
+    #   description: 'When wealthy industrialist Tony Sdtart is forced to build',
+    #   image_file_name: 'ironman.jpg',
+    #   released_on: '2008-05-02',
+    #   rating: 'PG-13',
+    #   total_gross: 318_412_101
+    # )
     expect(movie).to be_valid
   end
 
